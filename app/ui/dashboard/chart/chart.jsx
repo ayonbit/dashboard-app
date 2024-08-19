@@ -52,7 +52,7 @@ const chartData = [
 const Chart = () => {
   return (
     <div className={styles.container}>
-      <h2>Weekly Recap</h2>
+      <h2 className={styles.title}>Weekly Recap</h2>
       <ResponsiveContainer width="100%" height="100%">
         <LineChart
           width={500}
