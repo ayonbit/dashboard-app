@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.profile {
+  object-fit: contain;
+  border-radius: 50%;
+}

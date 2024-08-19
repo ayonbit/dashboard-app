@@ -90,7 +90,7 @@ const Sidebar = () => {
         <Image
           className={styles.userImage}
           src="/noavatar.png"
-          alt=""
+          alt="noavatar"
           width="50"
           height="50"
           priority={true}
