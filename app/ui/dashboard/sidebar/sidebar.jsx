@@ -1,5 +1,4 @@
 //Dependencies
-import Image from "next/image";
 
 //css modules
 import styles from "../sidebar/sidebar.module.css";
@@ -16,6 +15,7 @@ import {
   MdSupervisedUserCircle,
   MdWork,
 } from "react-icons/md";
+import ProfileImage from "../../profileImage/profile";
 import MenuLink from "./menuLink/menuLink";
 
 //data menu items
@@ -87,14 +87,7 @@ const Sidebar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.user}>
-        <Image
-          className={styles.userImage}
-          src="/noavatar.png"
-          alt="noavatar"
-          width="50"
-          height="50"
-          priority={true}
-        />
+        <ProfileImage />
         <div className={styles.userDetails}>
           <span className={styles.userName}>John Doe</span>
           <span className={styles.userTitle}>Administrator</span>

@@ -1,7 +1,7 @@
 //Dependencies
 import styles from "@/app/ui/dashboard/users/users.module.css";
+import ProfileImage from "@/app/ui/profileImage/profile";
 import Search from "@/app/ui/search/search";
-import Image from "next/image";
 import Link from "next/link";
 //Users Main Function
 const UsersPage = () => {
@@ -30,13 +30,7 @@ const UsersPage = () => {
           <tr>
             <td>
               <div className={styles.user}>
-                <Image
-                  src="/noavatar.png"
-                  alt="noavatar"
-                  width={40}
-                  height={40}
-                  className={styles.userImage}
-                />
+                <ProfileImage />
                 John Doe
               </div>
             </td>

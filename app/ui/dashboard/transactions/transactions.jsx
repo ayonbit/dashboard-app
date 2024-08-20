@@ -1,5 +1,5 @@
 //Dependencies
-import Image from "next/image";
+import ProfileImage from "../../profileImage/profile";
 import styles from "./transactions.module.css";
 
 //Transactions main functions
@@ -20,13 +20,7 @@ const Transactions = () => {
           <tr>
             <td>
               <div className={styles.user}>
-                <Image
-                  src="/noavatar.png"
-                  alt="noavatar"
-                  width={40}
-                  height={40}
-                  className={styles.userImage}
-                />
+                <ProfileImage />
                 John Doe
               </div>
             </td>
@@ -41,13 +35,7 @@ const Transactions = () => {
           <tr>
             <td>
               <div className={styles.user}>
-                <Image
-                  src="/noavatar.png"
-                  alt="noavatar"
-                  width={40}
-                  height={40}
-                  className={styles.userImage}
-                />
+                <ProfileImage />
                 Derek M. Metz
               </div>
             </td>
@@ -63,13 +51,7 @@ const Transactions = () => {
           <tr>
             <td>
               <div className={styles.user}>
-                <Image
-                  src="/noavatar.png"
-                  alt="noavatar"
-                  width={40}
-                  height={40}
-                  className={styles.userImage}
-                />
+                <ProfileImage />
                 Virginia K. Rodriguez
               </div>
             </td>
@@ -85,13 +67,7 @@ const Transactions = () => {
           <tr>
             <td>
               <div className={styles.user}>
-                <Image
-                  src="/noavatar.png"
-                  alt="noavatar"
-                  width={40}
-                  height={40}
-                  className={styles.userImage}
-                />
+                <ProfileImage />
                 John Doe
               </div>
             </td>

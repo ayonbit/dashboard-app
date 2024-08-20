@@ -11,7 +11,7 @@ const ProfileImage = () => {
         width={40}
         height={40}
       />
-      John Doe
+    
     </div>
   );
 };
