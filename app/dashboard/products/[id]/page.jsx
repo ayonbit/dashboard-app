@@ -28,8 +28,9 @@ const SingleProductPage = () => {
           <label>Category</label>
           <select name="cat" id="cat">
             <option value="phone">Phone</option>
-            <option value="electornics">Electornics</option>
-            <option value="laptop">Laptop</option>
+            <option value="kitchen">Kitchen</option>
+            <option value="computer">Computer</option>
+            <option value="pen">Pen</option>
             <option value="cloth">Cloth</option>
           </select>
           <label>Description</label>
