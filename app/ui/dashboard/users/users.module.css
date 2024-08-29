@@ -40,7 +40,10 @@
   border: none;
   cursor: pointer;
 }
-
+.profile {
+  object-fit: contain;
+  border-radius: 50%;
+}
 .view {
   background-color: teal;
 }

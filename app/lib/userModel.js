@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema(
       required: true,
       min: 6,
     },
-    image: {
+    img: {
       type: String,
     },
     isAdmin: {
@@ -43,4 +43,7 @@ const userSchema = new mongoose.Schema(
 );
 
 //export Users schema
-export const User = mongoose.model.Users || mongoose.model("Users", userSchema);
+const User = mongoose.models.User || mongoose.model("User", userSchema);
+
+//user model export
+export default User;
