@@ -1,7 +1,7 @@
 //Dependencies
 import Image from "next/image";
 import styles from "./productImage.module.css";
-const ProfileImage = () => {
+const ProductImage = () => {
   return (
     <div className={styles.container}>
       <Image
@@ -15,4 +15,4 @@ const ProfileImage = () => {
   );
 };
 
-export default ProfileImage;
+export default ProductImage;
