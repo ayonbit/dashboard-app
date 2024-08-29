@@ -1,7 +1,7 @@
 {
-  "editor.fontFamily": "Fira Code",
-  //"editor.fontFamily": "Fira Code Retina",
-  //"editor.fontFamily": "Daddy Time Mono",
+  //"editor.fontFamily": "Fira Code",
+  "editor.fontFamily": "Fira Code Retina",
+  // "editor.fontFamily": "Daddy Time Mono",
   "editor.fontSize": 25,
   "files.autoSave": "afterDelay",
   "editor.fontLigatures": true,
