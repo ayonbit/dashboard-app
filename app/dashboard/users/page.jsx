@@ -7,9 +7,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 //Users Main Function
-const UsersPage = async () => {
+const UsersPage = async ({ searchParams }) => {
+  //search params
+  const q = searchParams?.q || "";
+
   //user fetch function
-  const users = await fetchUsers();
+  const users = await fetchUsers(q);
   //console.log(users);
 
   return (
@@ -44,8 +47,8 @@ const UsersPage = async () => {
                       className={styles.profile}
                       src={user.img || "/noavatar.png"}
                       alt="noavatar"
-                      width={40}
-                      height={40}
+                      width={50}
+                      height={50}
                     />
                     {user.username}
                   </div>
