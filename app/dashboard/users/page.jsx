@@ -38,7 +38,6 @@ const UsersPage = async ({ searchParams }) => {
         </thead>
         <tbody>
           {users.map((user) => {
-            console.log(user.img);
             return (
               <tr key={user.id}>
                 <td>
@@ -54,7 +53,7 @@ const UsersPage = async ({ searchParams }) => {
                   </div>
                 </td>
                 <td>{user.email}</td>
-                <td>{user.createdAt}</td>
+                <td>{user.createdAt?.toLocaleDateString()}</td>
                 <td>{user.isAdmin ? "Admin" : "Client"}</td>
                 <td>{user.isActive ? "active" : "passive"}</td>
                 <td>
