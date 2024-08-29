@@ -22,6 +22,8 @@ const ProductPage = () => {
             <td>Title</td>
             <td>Description</td>
             <td>Price</td>
+            <td>Size</td>
+            <td>Color</td>
             <td>Category</td>
             <td>Inventory</td>
             <td>Action</td>
@@ -41,6 +43,8 @@ const ProductPage = () => {
               Explicabo.
             </td>
             <td>$ 1103.00 </td>
+            <td>Xl</td>
+            <td>White</td>
             <td>Phone</td>
             <td>34 in Stock</td>
             <td>
