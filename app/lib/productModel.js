@@ -26,7 +26,7 @@ const productSchema = new mongoose.Schema(
     size: {
       type: String,
     },
-    image: {
+    img: {
       type: String,
     },
     cat: {
@@ -40,6 +40,9 @@ const productSchema = new mongoose.Schema(
   }
 );
 
-//export Products schema
-export const Product =
-  mongoose.model.Product || mongoose.model("Product", productSchema);
+//export Users schema
+const Product =
+  mongoose.models.Product || mongoose.model("Product", productSchema);
+
+//user model export
+export default Product;

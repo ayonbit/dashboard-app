@@ -19,10 +19,9 @@
 }
 .table {
   width: 100%;
-  margin-top: 20px;
+  margin-bottom: 20px;
 }
-
-.prodcts {
+.product {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -48,6 +47,18 @@
 }
 .table thead tr td,
 .table tbody tr td {
-  border: 1px solid gray;
-  padding: 15px;
+  padding: 10px;
+}
+.desc {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+.productImage {
+  object-fit: cover;
+  border-radius: 5%;
+  overflow: hidden;
+  height: 40px;
+  width: 40px;
 }

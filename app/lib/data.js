@@ -1,7 +1,8 @@
 //Dependencies
 import { connectToDB } from "./dbcon";
 import User from "./userModel";
-
+import Product from "./productModel"
+//for Users fetch
 export const fetchUsers = async (q, page) => {
   //regex
   const regex = new RegExp(q, "i");
@@ -18,6 +19,29 @@ export const fetchUsers = async (q, page) => {
       .limit(Item_Per_Page)
       .skip(Item_Per_Page * (page - 1));
     return { count, users };
+  } catch (error) {
+    console.log(error);
+    throw new Error("Failed to fetch Users!");
+  }
+};
+
+//for fetch products
+export const fetchProducts = async (q, page) => {
+  //regex
+  const regex = new RegExp(q, "i");
+  //pagination  item for page
+  const Item_Per_Page = 5;
+
+  try {
+    connectToDB();
+    //db query for page number
+    const count = await Product.countDocuments({
+      title: { $regex: regex },
+    });
+    const products = await Product.find({ title: { $regex: regex } })
+      .limit(Item_Per_Page)
+      .skip(Item_Per_Page * (page - 1));
+    return { count, products };
   } catch (error) {
     console.log(error);
     throw new Error("Failed to fetch Users!");
