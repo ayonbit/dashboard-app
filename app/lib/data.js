@@ -1,7 +1,7 @@
 //Dependencies
 import { connectToDB } from "./dbcon";
+import Product from "./productModel";
 import User from "./userModel";
-import Product from "./productModel"
 //for Users fetch
 export const fetchUsers = async (q, page) => {
   //regex

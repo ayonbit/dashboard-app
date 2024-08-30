@@ -40,7 +40,7 @@ const ProductPage = async ({ searchParams }) => {
         </thead>
         <tbody>
           {products.map((product) => {
-            console.log(product.img);
+            //console.log(product.img);
             return (
               <tr key={product.id}>
                 <td>
