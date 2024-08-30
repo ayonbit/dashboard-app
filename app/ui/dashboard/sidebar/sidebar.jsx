@@ -3,6 +3,7 @@
 //css modules
 import styles from "../sidebar/sidebar.module.css";
 //react-icons
+import Image from "next/image";
 import {
   MdAnalytics,
   MdAttachMoney,
@@ -15,9 +16,7 @@ import {
   MdSupervisedUserCircle,
   MdWork,
 } from "react-icons/md";
-import ProfileImage from "../../profileImage/profile";
 import MenuLink from "./menuLink/menuLink";
-
 //data menu items
 const menuItems = [
   {
@@ -87,7 +86,13 @@ const Sidebar = () => {
   return (
     <div className={styles.container}>
       <div className={styles.user}>
-        <ProfileImage />
+        <Image
+          className={styles.userImage}
+          src="/noavatar.png"
+          alt="noavatar"
+          width={40}
+          height={40}
+        />
         <div className={styles.userDetails}>
           <span className={styles.userName}>John Doe</span>
           <span className={styles.userTitle}>Administrator</span>

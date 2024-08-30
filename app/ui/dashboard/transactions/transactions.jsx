@@ -1,7 +1,6 @@
 //Dependencies
-import ProfileImage from "../../profileImage/profile";
+import Image from "next/image";
 import styles from "./transactions.module.css";
-
 //Transactions main functions
 const Transactions = () => {
   return (
@@ -20,7 +19,13 @@ const Transactions = () => {
           <tr>
             <td>
               <div className={styles.user}>
-                <ProfileImage />
+                <Image
+                  className={styles.userImage}
+                  src="/noavatar.png"
+                  alt="noavatar"
+                  width={40}
+                  height={40}
+                />
                 John Doe
               </div>
             </td>
@@ -35,7 +40,13 @@ const Transactions = () => {
           <tr>
             <td>
               <div className={styles.user}>
-                <ProfileImage />
+                <Image
+                  className={styles.userImage}
+                  src="/noavatar.png"
+                  alt="noavatar"
+                  width={40}
+                  height={40}
+                />
                 Derek M. Metz
               </div>
             </td>
@@ -51,7 +62,13 @@ const Transactions = () => {
           <tr>
             <td>
               <div className={styles.user}>
-                <ProfileImage />
+                <Image
+                  className={styles.userImage}
+                  src="/noavatar.png"
+                  alt="noavatar"
+                  width={40}
+                  height={40}
+                />
                 Virginia K. Rodriguez
               </div>
             </td>
@@ -67,7 +84,13 @@ const Transactions = () => {
           <tr>
             <td>
               <div className={styles.user}>
-                <ProfileImage />
+                <Image
+                  className={styles.userImage}
+                  src="/noavatar.png"
+                  alt="noavatar"
+                  width={40}
+                  height={40}
+                />
                 John Doe
               </div>
             </td>
