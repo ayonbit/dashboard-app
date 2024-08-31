@@ -12,6 +12,7 @@ import {
   MdLogout,
   MdOutlineSettings,
   MdPeople,
+  MdReceipt,
   MdShoppingBag,
   MdSupervisedUserCircle,
   MdWork,
@@ -36,6 +37,11 @@ const menuItems = [
         title: "Products",
         path: "/dashboard/products",
         icon: <MdShoppingBag />,
+      },
+      {
+        title: "Invoice",
+        path: "/dashboard/invoice",
+        icon: <MdReceipt />, // Assuming MdReceipt is the icon you want to use
       },
       {
         title: "Transactions",
