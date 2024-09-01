@@ -1,5 +1,5 @@
 //Dependencies
-import AddUser from "@/app/lib/UserActions";
+import {AddUser} from "@/app/lib/UserActions";
 import styles from "@/app/ui/dashboard/users/addUser/adduser.module.css";
 
 //Add user main function

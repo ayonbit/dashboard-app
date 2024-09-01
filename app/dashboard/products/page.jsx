@@ -1,5 +1,6 @@
 //Dependencies
 import { fetchProducts } from "@/app/lib/data";
+import { DeleteProduct } from "@/app/lib/ProductAction";
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import styles from "@/app/ui/dashboard/products/products.module.css";
 import Search from "@/app/ui/search/search";
@@ -68,11 +69,13 @@ const ProductPage = async ({ searchParams }) => {
                         View
                       </button>
                     </Link>
-                    <Link href="">
+
+                    <form action={DeleteProduct}>
+                      <input type="hidden" name="id" value={product.id} />
                       <button className={`${styles.button} ${styles.delete}`}>
                         Delete
                       </button>
-                    </Link>
+                    </form>
                   </div>
                 </td>
               </tr>

@@ -7,7 +7,7 @@ import { connectToDB } from "./dbcon";
 import Product from "./productModel";
 
 //Add Product Function
-const AddProduct = async (formData) => {
+export const AddProduct = async (formData) => {
   //destructure form data
   const { title, desc, price, inventory, color, size, cat } =
     Object.fromEntries(formData);
@@ -40,5 +40,19 @@ const AddProduct = async (formData) => {
   redirect("/dashboard/products");
 };
 
-//module export
-export default AddProduct;
+export const DeleteProduct = async (formData) => {
+  const { id } = Object.fromEntries(formData);
+
+  try {
+    //Db connection
+    await connectToDB();
+    //delete product
+    console.log(id);
+    await Product.findByIdAndDelete(id);
+  } catch (error) {
+    console.log(error);
+    throw new Error("Product not deleted");
+  }
+
+  revalidatePath("/dashboard/products");
+};

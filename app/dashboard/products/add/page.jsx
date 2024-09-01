@@ -1,5 +1,5 @@
 //Dependencies
-import AddProduct from "@/app/lib/ProductAction";
+import { AddProduct } from "@/app/lib/ProductAction";
 import styles from "@/app/ui/dashboard/products/addProduct/addproduct.module.css";
 
 //Add Product Main Function

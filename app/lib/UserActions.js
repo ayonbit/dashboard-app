@@ -7,7 +7,7 @@ import { connectToDB } from "./dbcon";
 import User from "./userModel";
 
 //ADD User Function
-const AddUser = async (formData) => {
+export const AddUser = async (formData) => {
   //destructure form data
   const { username, email, phone, password, isAdmin, isActive, address } =
     Object.fromEntries(formData);
@@ -44,5 +44,19 @@ const AddUser = async (formData) => {
   redirect("/dashboard/users");
 };
 
-//module export
-export default AddUser;
+export const DeleteUser = async (formData) => {
+  const { id } = Object.fromEntries(formData);
+
+  try {
+    //Db connection
+    await connectToDB();
+    //delete product
+    console.log(id);
+    await User.findByIdAndDelete(id);
+  } catch (error) {
+    console.log(error);
+    throw new Error("User not deleted");
+  }
+
+  revalidatePath("/dashboard/products");
+};
