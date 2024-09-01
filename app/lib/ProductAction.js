@@ -27,7 +27,7 @@ export const AddProduct = async (formData) => {
       size,
       cat,
     });
-    console.log(product);
+
     await product.save();
   } catch (error) {
     console.log(error);
@@ -47,7 +47,7 @@ export const DeleteProduct = async (formData) => {
     //Db connection
     await connectToDB();
     //delete product
-    console.log(id);
+
     await Product.findByIdAndDelete(id);
   } catch (error) {
     console.log(error);

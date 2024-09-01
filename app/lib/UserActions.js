@@ -31,7 +31,7 @@ export const AddUser = async (formData) => {
       isActive,
       address,
     });
-    console.log(user);
+
     await user.save();
   } catch (error) {
     console.log(error);
@@ -51,7 +51,6 @@ export const DeleteUser = async (formData) => {
     //Db connection
     await connectToDB();
     //delete product
-    console.log(id);
     await User.findByIdAndDelete(id);
   } catch (error) {
     console.log(error);
