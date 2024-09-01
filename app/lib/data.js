@@ -25,6 +25,18 @@ export const fetchUsers = async (q, page) => {
   }
 };
 
+//for fetch single user to update
+export const fetchUpdateUsers = async (id) => {
+  try {
+    connectToDB();
+    const user = await User.findById(id);
+    return user;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Failed to fetch Update Users!");
+  }
+};
+
 //for fetch products
 export const fetchProducts = async (q, page) => {
   //regex
@@ -45,5 +57,17 @@ export const fetchProducts = async (q, page) => {
   } catch (error) {
     console.log(error);
     throw new Error("Failed to fetch Users!");
+  }
+};
+
+//for fetch single product to update
+export const fetchUpdateProducts = async (id) => {
+  try {
+    connectToDB();
+    const product = await Product.findById(id);
+    return product;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Failed to fetch Update Products!");
   }
 };

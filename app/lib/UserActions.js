@@ -44,6 +44,7 @@ export const AddUser = async (formData) => {
   redirect("/dashboard/users");
 };
 
+//Delete User Function
 export const DeleteUser = async (formData) => {
   const { id } = Object.fromEntries(formData);
 
@@ -58,4 +59,43 @@ export const DeleteUser = async (formData) => {
   }
 
   revalidatePath("/dashboard/products");
+};
+
+//Update User Function
+export const UpdateUser = async (formData) => {
+  //destructure form data
+  const { id, username, email, phone, password, isAdmin, isActive, address } =
+    Object.fromEntries(formData);
+
+  //new user to db
+  try {
+    //Db connection
+    await connectToDB();
+    //update fileds
+    const updateFields = {
+      username,
+      email,
+      phone,
+      isAdmin,
+      isActive,
+      address,
+    };
+
+    //update
+    Object.keys(updateFields).forEach(
+      (key) => (key) =>
+        (updateFields[key] === "" || undefined) && delete updateFields[key]
+    );
+
+    //save to db
+    await User.findByIdAndUpdate(id, updateFields);
+  } catch (error) {
+    console.log(error);
+    throw new Error("User not Updated");
+  }
+
+  //pathrevalidation
+  revalidatePath("/dashboard/users");
+  //redirect
+  redirect("/dashboard/users");
 };

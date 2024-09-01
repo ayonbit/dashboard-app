@@ -1,17 +1,20 @@
 //css import
+import { fetchUpdateProducts } from "@/app/lib/data";
 import styles from "@/app/ui/dashboard/products/singleProduct/singleProduct.module.css";
-
 import Image from "next/image";
 
 //singile user page function
-const SingleProductPage = () => {
+const SingleProductPage = async ({ params }) => {
+  const { id } = params;
+  const product = await fetchUpdateProducts(id);
+
   return (
     <div className={styles.container}>
       <div className={styles.infoContainer}>
         <div className={styles.imgContainer}>
-          <Image src="/noavatar.png" alt="noavatar" fill />
+          <Image src={product.img || "/noavatar.png"} alt="noavatar" fill />
         </div>
-        Iphone
+        {product.title}
       </div>
       <div className={styles.formContainer}>
         <form className={styles.form} action="">
