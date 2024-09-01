@@ -8,7 +8,6 @@ const productSchema = new mongoose.Schema(
     },
     desc: {
       type: String,
-      required: true,
     },
     price: {
       type: Number,
@@ -31,7 +30,6 @@ const productSchema = new mongoose.Schema(
     },
     cat: {
       type: String,
-      required: true,
       enum: ["phone", "kitchen", "computer", "pen", "cloth"],
     },
   },

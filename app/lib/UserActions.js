@@ -1,11 +1,13 @@
+"use server";
 //Dependencies
+import bcrypt from "bcrypt";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { connectToDB } from "./dbcon";
 import User from "./userModel";
+
+//ADD User Function
 const AddUser = async (formData) => {
-  //use server
-  "use server";
   //destructure form data
   const { username, email, phone, password, isAdmin, isActive, address } =
     Object.fromEntries(formData);
@@ -14,12 +16,17 @@ const AddUser = async (formData) => {
   try {
     //Db connection
     await connectToDB();
+
+    //hash password
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
     //create new user
     const user = await User.create({
       username,
       email,
       phone,
-      password,
+      password: hashedPassword,
       isAdmin,
       isActive,
       address,
@@ -37,4 +44,5 @@ const AddUser = async (formData) => {
   redirect("/dashboard/users");
 };
 
+//module export
 export default AddUser;
