@@ -15,7 +15,7 @@ const Search = ({ placeholder }) => {
   const handleSearch = useDebouncedCallback((e) => {
     const params = new URLSearchParams(searchParams);
 
-    params.set("page",1);
+    params.set("page", 1);
 
     if (e.target.value) {
       e.target.value.length > 2 && params.set("q", e.target.value);
@@ -26,8 +26,8 @@ const Search = ({ placeholder }) => {
     replace(`${pathname}?${params}`);
   }, 300);
 
-  console.log(searchParams);
-  console.log(pathname);
+  //console.log(searchParams);
+  //console.log(pathname);
   return (
     <div className={styles.container}>
       <MdSearch />

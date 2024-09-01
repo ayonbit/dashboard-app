@@ -14,6 +14,9 @@ const userSchema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+    phone: {
+      type: String,
+    },
     password: {
       type: String,
       required: true,
@@ -29,9 +32,6 @@ const userSchema = new mongoose.Schema(
     isActive: {
       type: Boolean,
       default: true,
-    },
-    phone: {
-      type: String,
     },
     address: {
       type: String,

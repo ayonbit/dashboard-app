@@ -1,14 +1,15 @@
 //Dependencies
+import AddUser from "@/app/lib/actions";
 import styles from "@/app/ui/dashboard/users/addUser/adduser.module.css";
 
 //Add user main function
 const AddUserPage = () => {
   return (
     <div className={styles.container}>
-      <form action="" className={styles.form}>
+      <form action={AddUser} className={styles.form}>
         <input type="text" placeholder="Username" name="username" required />
         <input type="email" placeholder="Email" name="email" required />
-        <input type="tel" placeholder="Phone" name="tel" required />
+        <input type="tel" placeholder="Phone" name="phone" required />
         <input
           type="password"
           placeholder="6 digit password"
@@ -17,16 +18,12 @@ const AddUserPage = () => {
         />
 
         <select name="isAdmin" id="isAdmin">
-          <option value={false} selected>
-            isAdmin ?
-          </option>
+          <option value={false}>isAdmin ?</option>
           <option value={true}>Yes</option>
           <option value={false}>NO</option>
         </select>
         <select name="isActive" id="isActive">
-          <option value={true} selected>
-            isActive ?
-          </option>
+          <option value={true}>isActive ?</option>
           <option value={true}>Yes</option>
           <option value={false}>NO</option>
         </select>
