@@ -1,9 +1,7 @@
 //Dependencies
-
 //css modules
 import styles from "../sidebar/sidebar.module.css";
 //react-icons
-import { auth } from "@/app/auth";
 import Image from "next/image";
 import {
   MdAnalytics,
@@ -90,9 +88,6 @@ const menuItems = [
 
 //main function
 const Sidebar = async () => {
-  const session = await auth();
-  console.log(session);
-
   return (
     <div className={styles.container}>
       <div className={styles.user}>
