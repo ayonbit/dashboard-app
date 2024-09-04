@@ -1,5 +1,5 @@
 //Dependencies
-import { authConfig } from "@/authconfig";
+import { authConfig } from "@/app/authconfig";
 import bcrypt from "bcrypt";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";

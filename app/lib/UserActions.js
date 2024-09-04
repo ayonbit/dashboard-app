@@ -5,7 +5,6 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { connectToDB } from "./dbcon";
 import User from "./userModel";
-
 //ADD User Function
 export const AddUser = async (formData) => {
   //destructure form data
@@ -98,4 +97,29 @@ export const UpdateUser = async (formData) => {
   revalidatePath("/dashboard/users");
   //redirect
   redirect("/dashboard/users");
+};
+
+export const authenticateUser = async (formData) => {
+  const { username, password } = Object.fromEntries(formData);
+
+  // Input validation
+  if (!username || !password) {
+    throw new Error("Username and password are required");
+  }
+
+  try {
+    // Attempt to sign in the user
+    const result = await signIn("credentials", { username, password });
+
+    if (!result.ok) {
+      throw new Error("Authentication failed");
+    }
+
+    // Log successful authentication
+    console.log(`User ${username} authenticated successfully`);
+  } catch (error) {
+    // Log the error securely
+    console.error(`Authentication error for user ${username}:`, error.message);
+    throw new Error("Authentication error");
+  }
 };
