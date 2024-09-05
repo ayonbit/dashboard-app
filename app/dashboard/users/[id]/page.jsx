@@ -19,7 +19,7 @@ const SingleUserPage = async ({ params }) => {
       </div>
       <div className={styles.formContainer}>
         <form className={styles.form} action={UpdateUser}>
-          <input type="hidden" name="id" value={user._id} />
+          <input type="hidden" name="id" value={user.id} />
           <label>Username</label>
           <input type="text" name="username" placeholder={user.username} />
           <label>Email</label>
