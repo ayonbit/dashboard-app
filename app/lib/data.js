@@ -1,4 +1,5 @@
 //Dependencies
+
 import { connectToDB } from "./dbcon";
 import Product from "./productModel";
 import User from "./userModel";
@@ -71,3 +72,5 @@ export const fetchUpdateProducts = async (id) => {
     throw new Error("Failed to fetch Update Products!");
   }
 };
+
+

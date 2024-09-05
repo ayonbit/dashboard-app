@@ -3,9 +3,9 @@
 import bcrypt from "bcrypt";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { signIn } from "../auth";
 import { connectToDB } from "./dbcon";
 import User from "./userModel";
-
 // ADD User Function
 export const AddUser = async (formData) => {
   const { username, email, phone, password, isAdmin, isActive, address } =
@@ -75,4 +75,17 @@ export const UpdateUser = async (formData) => {
 
   revalidatePath("/dashboard/users");
   redirect("/dashboard/users");
+};
+
+export const authenticate = async (formData) => {
+  const { username, password } = Object.fromEntries(formData);
+
+  try {
+    await signIn("credentials", { username, password });
+  } catch (err) {
+    if (err.message.includes("CredentialsSignin")) {
+      return "Wrong Credentials";
+    }
+    throw err;
+  }
 };

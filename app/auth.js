@@ -3,7 +3,7 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { authConfig } from "./auth.config";
 import { connectToDB } from "./lib/dbcon";
-import { User } from "./lib/userModel";
+import User from "./lib/userModel";
 
 const login = async (credentials) => {
   try {
@@ -40,4 +40,21 @@ export const { signIn, signOut, auth } = NextAuth({
       },
     }),
   ],
+  // ADD ADDITIONAL INFORMATION TO SESSION
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.username = user.username;
+        token.img = user.img;
+      }
+      return token;
+    },
+    async session({ session, token }) {
+      if (token) {
+        session.user.username = token.username;
+        session.user.img = token.img;
+      }
+      return session;
+    },
+  },
 });
